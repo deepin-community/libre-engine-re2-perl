@@ -1,0 +1,59 @@
+libre-engine-re2-perl (0.14-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+  [ Debian Janitor ]
+  * apply multi-arch hints: Multi-Arch: same
+
+  [ Jonas Smedegaard ]
+  * use debhelper compatibility level 13 (not 12)
+  * drop patches 1001 1002 adopted upstream
+  * unfuzz patch 2001
+  * declare compliance with Debian Policy 4.5.1
+  * copyright info: update coverage
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 07 Feb 2021 02:09:58 +0100
+
+libre-engine-re2-perl (0.13-5) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Bump debhelper to 12.
+  * Set debhelper-compat version in Build-Depends.
+  * Set upstream metadata fields: Repository, Repository-Browse.
+
+  [ Jonas Smedegaard ]
+  * add patch 1003 to fix flag all captures as UTF8;
+    thanks to Todd Richmond
+  * update DEP-3 header for patch 1001: add bug reference
+  * declare compliance with Debian Policy 4.5.0
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 22 Feb 2020 11:55:43 +0100
+
+libre-engine-re2-perl (0.13-4) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 07 Jul 2019 21:54:39 -0300
+
+libre-engine-re2-perl (0.13-3) experimental; urgency=medium
+
+  * Add patch 1002 cherry-picked from re::engine::PCRE2
+    to fix FTBFS in testsuite regarding variable length lookbehind
+    supported since Perl 5.29.9.
+    Closes: Bug#930049. Thanks to Niko Tyni.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 06 Jun 2019 22:35:03 +0200
+
+libre-engine-re2-perl (0.13-2) unstable; urgency=medium
+
+  * Set Rules-Requires-Root: no.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 04 Nov 2018 17:45:50 +0100
+
+libre-engine-re2-perl (0.13-1) unstable; urgency=low
+
+  * Initial Release.
+    Closes: bug#911293.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 18 Oct 2018 11:56:24 +0200

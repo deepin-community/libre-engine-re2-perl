@@ -1,0 +1,26 @@
+Description: fix flag all captures as UTF8
+Origin: https://rt.cpan.org/Public/Bug/Display.html?id=131618
+Author: Todd Richmond <trichmond@proofpoint.com>
+Bug: https://rt.cpan.org/Public/Bug/Display.html?id=116747
+Bug: https://rt.cpan.org/Public/Bug/Display.html?id=131618
+Last-Update: 2020-02-22
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/re2_xs.cc
++++ b/re2_xs.cc
+@@ -115,10 +115,13 @@
+     // XXX: Need to compile two versions?
+     /* The pattern is not UTF-8. Tell RE2 to treat it as Latin1. */
+ #ifdef RXf_UTF8
+-    if (!(flags & RXf_UTF8))
++    if (flags & RXf_UTF8)
++        extflags |= RXf_MATCH_UTF8;
+ #else
+-    if (!SvUTF8(pattern))
++    if (SvUTF8(pattern))
++        extflags |= RXf_MATCH_UTF8;
+ #endif
++    else
+         options.set_encoding(RE2::Options::EncodingLatin1);
+ 
+     options.set_log_errors(false);

@@ -1,0 +1,4 @@
+# run "uscan --report" to check or "gbp import-orig --uscan" to update
+version=4
+https://metacpan.org/release/re-engine-RE2 \
+ .*/re-engine-RE2@ANY_VERSION@@ARCHIVE_EXT@
